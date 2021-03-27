@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;background-color: deepskyblue;
+			color: white;font-family: calibri;
+		}
+		.screen{
+			margin: auto;
+			width: 50vh;
+			height: 100vh;
+			background-color: #111;
+			position: relative;
+			overflow: auto;
+		}
+
+
+
+		/*bottom navbar*/
+		.nav{
+			width: 50vh;
+			height: 7vh;
+			background-color: #333;
+			position: fixed;
+			bottom: 0;
+		}
+		.navbtn{
+			width: 12.5vh;
+			height: 7vh;
+			float: left;
+			padding: 0;
+			font-size: 1.8vh;
+			background-color: transparent;
+			border: none;
+			color: white;
+			outline: none;
+			transition: background-color 1s;
+		}
+		.navbtn:hover{
+			background-color: #555;
+		}
+		
+		/*music bar*/
+		.musicbar{
+			width: 50vh;
+			height: 5vh;
+			background-color: #333;
+			position: fixed;
+			bottom: 7vh;
+			box-sizing: border-box;
+			border-bottom: 0.3vh solid #111;
+			line-height: 5vh;
+		}
+		.fav{
+			font-size: 4vh;
+			color: #333;
+			float: left;
+			margin: 0vh 1vh;
+			text-shadow: 0.1vh 0.1vh 0vh white, -0.1vh 0.1vh 0vh white, 0.1vh -0.1vh 0vh white, -0.1vh -0.1vh 0vh white;
+		}
+		.song{
+			margin-left: 1vh;
+			font-size: 2.5vh;
+			float: left;
+		}
+		.singer{
+			color: #ccc;
+			font-size: 2vh;
+			float: left;
+			margin-left: 0.5vh;
+		}
+		.next,.play{
+			float: right;
+			font-size: 7vh;
+		}
+		.next:hover,.play:hover{
+			color: #ccc;
+		}
+
+		.music-line{
+			height: 0.5vh;
+			position: fixed;
+			bottom: 12vh;
+			border-left: 20vh solid white;
+			border-right: 30vh solid gray;
+		}
+		.search-page{
+			width: 50vh;
+			height: 87vh;
+			overflow: hidden;
+		}
+		.sbox{
+			width: 40vh;
+			height: 5vh;
+			padding: 1vh 3.5vh;
+			margin: 1.5vh;
+			border: none;outline: none;
+			text-align: center;
+			font-size: 2vh;
+			border-radius: 1vh;
+			position: sticky;
+			box-shadow: 0px 5px 5px -5px gray;
+		}
+		.sbox:focus{
+			margin: 0;
+			width: 40vh;
+			padding: 1vh 5vh;
+			border-radius: 0;
+			background-color: gray;
+			color: #fff;
+			font-size: 2.3vh;
+			text-align: left;
+		}
+		.sbox:focus::placeholder{
+			color: #ddd;
+			text-align: left;
+		}
+		.cards-list{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		.card{
+			/* float: left; */
+			width: 22vh;
+			height: 10vh;
+			margin: 1vh;
+			font-size: 2.5vh;
+			background-color:darkorchid;
+			line-height: 10vh;
+			text-indent: 1vh;
+			font-weight: 900;
+			border-radius: 1vh;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="screen">
+
+		<div class="main-content">
+			<div class="search-page">
+				<input list="slist" type="text" class="sbox" placeholder="Search artists, songs and playlists">
+				<datalist id="slist">
+					<option value="Tune Kaha">Prateek Kuhad</option>
+					<option value="Kuch Is Tarah">Atif Aslam</option>
+					<option value="Willow">Taylor Swift</option>
+					<option value="Woh Baarishien">Arjun Kanungo</option>
+				</datalist>
+
+
+				<div class="cards-list">
+					<div class="card" style="background-color:rgb(230, 126, 0) ;">Podcast</div>
+					<div class="card" style="background-color:orangered ;">Bollywood</div>
+					<div class="card" style="background-color:rgb(172, 0, 114);">Punjabi</div>
+					<div class="card" style="background-color:mediumseagreen ;">Pop</div>
+					<div class="card" style="background-color:darkblue ;">Indie</div>
+					<div class="card" style="background-color:yellowgreen ;">Hip-Hop</div>
+					<div class="card" style="background-color: darkorchid;">Dance/Electronic</div>
+					<div class="card" style="background-color:deepskyblue ;">Workout</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="music-line"></div>
+
+		<div class="musicbar">
+			<span class="fav">&hearts;</span>
+
+			<span class="song">Tune Kaha -</span><span class="singer">Prateek Kuhad</span>
+
+			<span class="next">&blacktriangleright;</span>
+			<span class="play">&blacktriangleleft;</span>
+		</div>
+
+		<div class="nav">
+			<button class="navbtn">Home</button>
+			<button class="navbtn" style="font-weight: 900;">Search</button>
+			<button class="navbtn">Favorites</button>
+			<button class="navbtn">Premium</button>
+		</div>
+	</div>
+</body>
+</html>
